@@ -12,7 +12,8 @@
   "content_scripts": [
     {
       "matches": ["*://*.twitter.com/*"],
-      "js": ["script.js"]
+      "js": ["script.js"] ,
+      "css":["style.css"]
     }
   ] ,
   "browser_specific_settings": {
