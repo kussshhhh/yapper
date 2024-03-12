@@ -13,6 +13,8 @@
       position: fixed;
       top: 10px;
       right: 10px;
+      width: 200px ;
+      height: 200px ;
       padding: 10px;
       background-color: black ;
       border: 1px solid #ddd;
@@ -23,6 +25,7 @@
       z-index: 9999; /* Ensure popup is on top */` ;
       //meme injected
       const img = document.createElement('img') ;
+      img.id = 'img' ;
       img.setAttribute('src', 'https://pbs.twimg.com/media/GGcG_gFW0AAoz1V?format=jpg&name=medium') ;
       img.style.width = 'auto';
       img.style.height = 'auto';
@@ -43,9 +46,39 @@
      
       closeButton.addEventListener('click', () => popup.remove());
       popup.appendChild(closeButton);
+      // Container for the link (initially hidden)
+      const linkContainer = document.createElement('div');
+      linkContainer.id = 'link-container';
+      linkContainer.style.cssText = `
+      height: auto ;
+      width: auto ;
+      display : flex ; 
+      flex-direction: column ;
+      `
+
+      // Link to Striver course
+      const link = document.createElement('a');
+      link.setAttribute('href', 'https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/');
+      link.textContent = 'Striver';
+      linkContainer.appendChild(link);
+
+
+      popup.appendChild(linkContainer); // Add the link container to the popup
+
+      popup.addEventListener('mouseover', () => {
+        popup.querySelector('#link-container').style.display = 'block'; // Show the link container on hover
+        popup.querySelector('#img').style.display = 'none' ;
+      });
   
+      popup.addEventListener('mouseout', () => {
+        popup.querySelector('#link-container').style.display = 'none'; // Hide the link container onmouseout
+        popup.querySelector('#img').style.display = 'block' ;
+
+      });
+  
+      
       document.body.appendChild(popup);
-    }
+  }
   
    
   
