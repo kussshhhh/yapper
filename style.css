@@ -1,7 +1,22 @@
 .closeButton{
     border-radius: 30px;
-    
+    margin-top: 5px;
+    padding: 5px 10px;
+    background-color: black;
+    border: none;
+    cursor: pointer;
 }
 .yapper-popup{
     border-radius: 30px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    background-color: black ;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: sans-serif;
+    display : flex ; 
+    flex-direction: column ; 
+    z-index: 9999; /* Ensure popup is on top */
 }
